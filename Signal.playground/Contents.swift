@@ -34,7 +34,7 @@ extension StopSignalValidatable {
     }
 }
 
-class VirtualVendingMachine: StopSignalValidatable {
+class Signal: StopSignalValidatable {
     private var inputedSignal: Int = 0
     private var blue = SignalModel(type: .blue)
     private var yellow = SignalModel(type: .yellow)
@@ -67,8 +67,8 @@ class VirtualVendingMachine: StopSignalValidatable {
 
 }
 
-let virtualVendingMachine = VirtualVendingMachine()
-let isSuccessToBuy = virtualVendingMachine.buyDrink(type: .blue, inputedSignal: 1)
+let signal = Signal()
+let isSuccessToBuy = signal.buyDrink(type: .blue, inputedSignal: 1)
 
 
 
