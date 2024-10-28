@@ -68,7 +68,7 @@ class Signal: StopSignalValidatable {
 }
 
 let signal = Signal()
-let isSuccessToBuy = signal.buyDrink(type: .blue, inputedSignal: 1)
+let isSignalColor = signal.buyDrink(type: .blue, inputedSignal: 1)
 
 
 
