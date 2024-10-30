@@ -40,7 +40,7 @@ class Signal: StopSignalValidatable {
     private var yellow = SignalModel(type: .yellow)
     private var red = SignalModel(type: .red)
 
-    func goSignal(type: SignalType, inputedSignal: String) -> Bool {
+    func goSignal(type: SignalType, inputedSignal: String) {
         switch type {
         case .blue:
             let isSignal = validateSignal(with: blue, inputSignal: inputedSignal)
@@ -48,7 +48,6 @@ class Signal: StopSignalValidatable {
                 print("現在、\(blue.type.signalsType)信号")
                 print("次は \(yellow.type.signalsType)信号")
             }
-            return isSignal
         case .yellow:
             let isSignal = validateSignal(with: yellow, inputSignal: inputedSignal)
             if inputedSignal == "黄" {
@@ -62,13 +61,12 @@ class Signal: StopSignalValidatable {
                 print("次は \(blue.type.signalsType)信号")
             }
         }
-        return isSignalColor
     }
 
 }
 
 let signal = Signal()
-let isSignalColor = signal.goSignal(type: .red, inputedSignal: "赤")
+let signalColor: () = signal.goSignal(type: .red, inputedSignal: "赤")
 
 
 
